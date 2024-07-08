@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const edad = parseInt(document.querySelector('#animal-age').value, 10);
 
         const animal1 = new Animal(nombre, edad);
-        soundMessage.textContent = animal1.hacerSonido();
-        console.log(animal1.hacerSonido());
+        const sonido = animal1.hacerSonido();
+        soundMessage.textContent = sonido;
+        console.log(sonido);
     });
 });
