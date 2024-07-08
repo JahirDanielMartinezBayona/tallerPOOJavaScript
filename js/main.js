@@ -8,6 +8,10 @@ class Persona {
     saludar() {
         return `Hola, mi nombre es ${this.nombre}.`;
     }
+
+    static esMayorDeEdad(edad) {
+        return edad >= 18;
+    }
 }
 
 class Estudiante extends Persona {
@@ -30,12 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const nombre = document.querySelector('#nombre').value;
-        const edad = document.querySelector('#edad').value;
+        const edad = parseInt(document.querySelector('#edad').value, 10);
         const sexo = document.querySelector('#sexo').value;
         const carrera = document.querySelector('#carrera').value;
 
         const estudiante1 = new Estudiante(nombre, edad, sexo, carrera);
         greetingMessage.textContent = estudiante1.saludar();
         studyMessage.textContent = estudiante1.estudiar();
+
+        const esMayor = Persona.esMayorDeEdad(edad);
+        console.log(`¿Es mayor de edad?: ${esMayor}`);
     });
 });
