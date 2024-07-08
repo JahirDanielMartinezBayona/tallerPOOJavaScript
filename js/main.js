@@ -10,9 +10,21 @@ class Persona {
     }
 }
 
+class Estudiante extends Persona {
+    constructor(nombre, edad, sexo, carrera) {
+        super(nombre, edad, sexo);
+        this.carrera = carrera;
+    }
+
+    estudiar() {
+        return `Estoy estudiando ${this.carrera}.`;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('#personaForm');
+    const form = document.querySelector('#studentForm');
     const greetingMessage = document.querySelector('#greetingMessage');
+    const studyMessage = document.querySelector('#studyMessage');
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -20,8 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const nombre = document.querySelector('#nombre').value;
         const edad = document.querySelector('#edad').value;
         const sexo = document.querySelector('#sexo').value;
+        const carrera = document.querySelector('#carrera').value;
 
-        const persona1 = new Persona(nombre, edad, sexo);
-        greetingMessage.textContent = persona1.saludar();
+        const estudiante1 = new Estudiante(nombre, edad, sexo, carrera);
+        greetingMessage.textContent = estudiante1.saludar();
+        studyMessage.textContent = estudiante1.estudiar();
     });
 });

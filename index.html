@@ -9,8 +9,8 @@
 </head>
 <body>
     <main class="main-content">
-        <h1 class="main-content__title">Ejemplo de Clase Persona</h1>
-        <form id="personaForm" class="form">
+        <h1 class="main-content__title">Ejemplo de Clase Estudiante</h1>
+        <form id="studentForm" class="form">
             <label for="nombre" class="form__label">Nombre:</label>
             <input type="text" id="nombre" name="nombre" class="form__input" required>
             
@@ -23,10 +23,14 @@
                 <option value="Femenino">Femenino</option>
                 <option value="Otro">Otro</option>
             </select>
+
+            <label for="carrera" class="form__label">Carrera:</label>
+            <input type="text" id="carrera" name="carrera" class="form__input" required>
             
-            <button type="submit" class="form__button">Saludar</button>
+            <button type="submit" class="form__button">Saludar y Estudiar</button>
         </form>
         <p id="greetingMessage" class="greeting-message"></p>
+        <p id="studyMessage" class="study-message"></p>
     </main>
 </body>
 </html>
