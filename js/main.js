@@ -1,13 +1,11 @@
 class Figura {
-    constructor(color, width, height) {
+    constructor(color, area) {
         this.color = color;
-        this.width = width;
-        this.height = height;
+        this.area = area;
     }
 
     calcularArea() {
-        const area = this.width * this.height;
-        return `El área de la figura de color ${this.color} es ${area} cm².`;
+        return `El área de la figura de color ${this.color} es ${this.area} cm².`;
     }
 }
 
@@ -19,10 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const color = document.querySelector('#figure-color').value;
-        const width = parseFloat(document.querySelector('#figure-width').value);
-        const height = parseFloat(document.querySelector('#figure-height').value);
+        const area = parseFloat(document.querySelector('#figure-area').value);
 
-        const figura1 = new Figura(color, width, height);
+        const figura1 = new Figura(color, area);
         const mensajeArea = figura1.calcularArea();
         areaMessage.textContent = mensajeArea;
         console.log(mensajeArea);
