@@ -11,38 +11,24 @@
     <main class="main">
         <section class="main__content">
             <header class="main__header">
-                <h1 class="main__title">Clase Animal y Perro</h1>
+                <h1 class="main__title">Clase Figura</h1>
             </header>
-            <form id="animal-form" class="form">
+            <form id="figure-form" class="form">
                 <div class="form__group">
-                    <label for="animal-name" class="form__label">Nombre del Animal:</label>
-                    <input type="text" id="animal-name" name="nombre" class="form__input" required>
+                    <label for="figure-color" class="form__label">Color de la Figura:</label>
+                    <input type="text" id="figure-color" name="color" class="form__input" required>
                 </div>
                 <div class="form__group">
-                    <label for="animal-age" class="form__label">Edad del Animal:</label>
-                    <input type="number" id="animal-age" name="edad" class="form__input" required>
+                    <label for="figure-width" class="form__label">Ancho de la Figura (cm):</label>
+                    <input type="number" id="figure-width" name="width" class="form__input" required>
                 </div>
-                <button type="submit" class="form__button">Hacer Sonido</button>
+                <div class="form__group">
+                    <label for="figure-height" class="form__label">Alto de la Figura (cm):</label>
+                    <input type="number" id="figure-height" name="height" class="form__input" required>
+                </div>
+                <button type="submit" class="form__button">Calcular Área</button>
             </form>
-            <p id="animal-sound-message" class="message"></p>
-
-            <form id="dog-form" class="form">
-                <div class="form__group">
-                    <label for="dog-name" class="form__label">Nombre del Perro:</label>
-                    <input type="text" id="dog-name" name="nombre" class="form__input" required>
-                </div>
-                <div class="form__group">
-                    <label for="dog-age" class="form__label">Edad del Perro:</label>
-                    <input type="number" id="dog-age" name="edad" class="form__input" required>
-                </div>
-                <div class="form__group">
-                    <label for="dog-breed" class="form__label">Raza del Perro:</label>
-                    <input type="text" id="dog-breed" name="raza" class="form__input" required>
-                </div>
-                <button type="submit" class="form__button">Hacer Sonido y Mover Cola</button>
-            </form>
-            <p id="dog-sound-message" class="message"></p>
-            <p id="dog-tail-message" class="message"></p>
+            <p id="area-message" class="message"></p>
         </section>
     </main>
 </body>
