@@ -1,27 +1,41 @@
+// Clase Figura base
 class Figura {
-    constructor(color, area) {
+    constructor(color) {
         this.color = color;
-        this.area = area;
     }
 
     calcularArea() {
-        return `El área de la figura de color ${this.color} es ${this.area} cm².`;
+        throw new Error("Método calcularArea() debe ser implementado en la subclase.");
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const figureForm = document.querySelector('#figure-form');
-    const areaMessage = document.querySelector('#area-message');
+// Clase Círculo que hereda de Figura
+class Circulo extends Figura {
+    constructor(color, radio) {
+        super(color);
+        this.radio = radio;
+    }
 
-    figureForm.addEventListener('submit', (event) => {
+    calcularArea() {
+        const area = Math.PI * Math.pow(this.radio, 2);
+        return `El área del círculo de color ${this.color} es ${area.toFixed(2)} cm².`;
+    }
+}
+
+// Manejo del formulario y de la lógica de la aplicación
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#circle-form');
+    const messageElement = document.querySelector('#circle-message');
+
+    form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const color = document.querySelector('#figure-color').value;
-        const area = parseFloat(document.querySelector('#figure-area').value);
+        const color = document.querySelector('#circle-color').value;
+        const radio = parseFloat(document.querySelector('#circle-radius').value);
 
-        const figura1 = new Figura(color, area);
-        const mensajeArea = figura1.calcularArea();
-        areaMessage.textContent = mensajeArea;
-        console.log(mensajeArea);
+        const circulo1 = new Circulo(color, radio);
+        const areaMessage = circulo1.calcularArea();
+        messageElement.textContent = areaMessage;
+        console.log(areaMessage);
     });
 });

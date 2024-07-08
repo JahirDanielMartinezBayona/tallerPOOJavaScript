@@ -9,24 +9,21 @@
 </head>
 <body>
     <main class="main">
-        <section class="main__content">
-            <header class="main__header">
-                <h1 class="main__title">Clase Figura</h1>
-            </header>
-            <form id="figure-form" class="form">
-                <div class="form__group">
-                    <label for="figure-color" class="form__label">Color de la Figura:</label>
-                    <input type="text" id="figure-color" name="color" class="form__input" required>
+        <section class="circle-form">
+            <h1 class="circle-form__title">Clase Círculo</h1>
+            <form id="circle-form" class="circle-form__form">
+                <div class="circle-form__group">
+                    <label for="circle-color" class="circle-form__label">Color:</label>
+                    <input type="text" id="circle-color" name="color" class="circle-form__input" placeholder="Ingrese el color" required>
                 </div>
-                <div class="form__group">
-                    <label for="figure-area" class="form__label">Área de la Figura (cm²):</label>
-                    <input type="number" id="figure-area" name="area" class="form__input" required>
+                <div class="circle-form__group">
+                    <label for="circle-radius" class="circle-form__label">Radio (cm):</label>
+                    <input type="number" id="circle-radius" name="radius" class="circle-form__input" placeholder="Ingrese el radio" required>
                 </div>
-                <button type="submit" class="form__button">Calcular Área</button>
+                <button type="submit" class="circle-form__button">Calcular Área</button>
             </form>
-            <p id="area-message" class="message"></p>
+            <p id="circle-message" class="circle-form__message"></p>
         </section>
     </main>
-
 </body>
 </html>
