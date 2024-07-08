@@ -1,48 +1,26 @@
-class Persona {
-    constructor(nombre, edad, sexo) {
+class Animal {
+    constructor(nombre, edad) {
         this.nombre = nombre;
         this.edad = edad;
-        this.sexo = sexo;
     }
 
-    saludar() {
-        return `Hola, mi nombre es ${this.nombre}.`;
-    }
-
-    static esMayorDeEdad(edad) {
-        return edad >= 18;
-    }
-}
-
-class Estudiante extends Persona {
-    constructor(nombre, edad, sexo, carrera) {
-        super(nombre, edad, sexo);
-        this.carrera = carrera;
-    }
-
-    estudiar() {
-        return `Estoy estudiando ${this.carrera}.`;
+    hacerSonido() {
+        return `El animal ${this.nombre} hace un sonido.`;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('#studentForm');
-    const greetingMessage = document.querySelector('#greetingMessage');
-    const studyMessage = document.querySelector('#studyMessage');
+    const animalForm = document.querySelector('#animal-form');
+    const soundMessage = document.querySelector('#sound-message');
 
-    form.addEventListener('submit', (event) => {
+    animalForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const nombre = document.querySelector('#nombre').value;
-        const edad = parseInt(document.querySelector('#edad').value, 10);
-        const sexo = document.querySelector('#sexo').value;
-        const carrera = document.querySelector('#carrera').value;
+        const nombre = document.querySelector('#animal-name').value;
+        const edad = parseInt(document.querySelector('#animal-age').value, 10);
 
-        const estudiante1 = new Estudiante(nombre, edad, sexo, carrera);
-        greetingMessage.textContent = estudiante1.saludar();
-        studyMessage.textContent = estudiante1.estudiar();
-
-        const esMayor = Persona.esMayorDeEdad(edad);
-        console.log(`¿Es mayor de edad?: ${esMayor}`);
+        const animal1 = new Animal(nombre, edad);
+        soundMessage.textContent = animal1.hacerSonido();
+        console.log(animal1.hacerSonido());
     });
 });

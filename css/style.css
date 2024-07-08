@@ -8,65 +8,77 @@
 
 body {
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
+    height: 100vh;
     font-family: var(--font-family);
-    background-color: #e0f7fa;
+    background-color: #f5f5f5;
 }
 
-.main-content {
-    text-align: center;
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main__content {
+    background: white;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.main-content__title {
-    color: #212121;
+.main__header {
     margin-bottom: 20px;
+}
+
+.main__title {
+    font-size: 24px;
+    color: var(--primary-color);
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.form__group {
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .form__label {
-    margin-top: 10px;
     margin-bottom: 5px;
-    color: #212121;
     font-weight: bold;
+    color: #333;
 }
 
 .form__input {
     padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
     width: 100%;
-    max-width: 300px;
 }
 
 .form__button {
     padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
     background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .form__button:hover {
     background-color: var(--hover-color);
 }
 
-.greeting-message, .study-message {
+.message {
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: #212121;
+    font-size: 18px;
+    color: #333;
 }
